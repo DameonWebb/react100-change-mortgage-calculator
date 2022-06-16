@@ -52,7 +52,7 @@ export default class App extends React.Component {
      //input element for mortgage loan balance
      //input element for APR
      <div className='container'>
-       <h3>Mortgage Calculator</h3>;
+       <h3>Mortgage Calculator</h3>
         <input type = 'number' name='balance' value ={this.state.balance} onChange = {this.handleChange}/> 
         <input type = 'number' name='rate' step = '0.01' value = {this.state.rate} 
         onChange = {this.handleChange}/>
