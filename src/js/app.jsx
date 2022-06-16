@@ -52,9 +52,13 @@ export default class App extends React.Component {
      //input element for mortgage loan balance
      //input element for APR
      <div className='container'>
-        <input type = 'number' name='balance' onChange = {this.handleChange} value ={this.state.balance}></input>
-        <input type = 'number' name='rate' step = '0.01' value = {this.state.rate} onChange ={this.handleChange}></input>
-        <select name='term' value = {this.state.term}><option value = '15' >15</option><option value = '30'>30</option></select>
+       <h3>Mortgage Calculator</h3>;
+        <input type = 'number' name='balance' value ={this.state.balance} onChange = {this.handleChange}/> 
+        <input type = 'number' name='rate' step = '0.01' value = {this.state.rate} 
+        onChange = {this.handleChange}/>
+        <select name='term' value = {this.state.term} onChange = {this.handleChange}>
+          <option value = '15' >15</option>
+        <option value = '30'>30</option></select>
         <button name = 'submit' onClick = {(e) => {
           e.preventDefault();
           this.handleClick(e);
@@ -65,7 +69,4 @@ export default class App extends React.Component {
   }
 }
 
-//a function that update state values when an input changes, using event binding
-function upDate() {
 
-};
