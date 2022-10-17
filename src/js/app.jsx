@@ -16,6 +16,8 @@ export default class App extends React.Component {
     this.calculate = this.calculate.bind(this)
   }
 
+  //que changes to the component state, and re-render this component and its children with updated state
+  //mortgage calculator
   handleChange(event){
     this.setState({
       [event.target.name]: event.target.value
@@ -53,17 +55,33 @@ export default class App extends React.Component {
      //input element for APR
      <div className='container'>
        <h3>Mortgage Calculator</h3>
+       <div className="model" tabIndex = "-1">
+       <div className="modal-dialog">
+    <div className="modal-content">
+    <div className="modal-header">
+    </div>
+    <div className="modal-body">
+    
         <input type = 'number' name='balance' value ={this.state.balance} onChange = {this.handleChange}/> 
         <input type = 'number' name='rate' step = '0.01' value = {this.state.rate} 
         onChange = {this.handleChange}/>
         <select name='term' value = {this.state.term} onChange = {this.handleChange}>
           <option value = '15' >15</option>
         <option value = '30'>30</option></select>
-        <button name = 'submit' onClick = {(e) => {
-          e.preventDefault();
+       </div>
+       <div className="modal-footer">
+        <button name = 'submit' className ="btn btn-success" onClick = {(e) => {
+          e.preventDefault(); //prevents the default behavior of the the onClick function
           this.handleClick(e);
+
         }}>Calculate</button>
+        </div>
+        </div>
+        </div>
         <div name = 'output' id= 'output'>{this.state.output}</div>
+        
+
+      </div>
       </div>
     );
   }
